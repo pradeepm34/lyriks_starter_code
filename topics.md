@@ -16,3 +16,6 @@ discover page ------->songs has to be click
 making an unnecessary API call on aroundyou 
 
 top charts not working .. calling wrong url on router
+
+pushing all the codee
+
