@@ -10,12 +10,13 @@ learn this
 bg-gradient-to-l from-transparent to-black
 
 
-discover page ------->songs has to be click -------->fixed
-/artists/details?artist_id=${artistId}----------->API not working
+discover page ------->songs has to be click -------->fixed 
 
-making an unnecessary API call on aroundyou 
+/artists/details?artist_id=${artistId}----------->fixed added artistId to the relatedSongs component
 
-top charts not working .. calling wrong url on router
+making an unnecessary API call on aroundyou --->fixed added skip on redux query
 
-pushing all the codee
+top charts not working .. calling wrong url on router---->fixed added "/" at the start of route on Link to
+
+pushing all the code
 

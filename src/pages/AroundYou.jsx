@@ -7,23 +7,18 @@ import { useGetSongsByCountryQuery } from "../redux/services/shazamCore";
 const AroundYou = () => {
     const [country, setCountry] = useState('');
     const [loading, setLoading] = useState(true);
+    const [skip, setSkip] = useState(true);
     const { activeSong, isPlaying } = useSelector((state) => state.player);
-    const { data, isFetching, error } = useGetSongsByCountryQuery(country);
-
-
+    const { data, isFetching, error } = useGetSongsByCountryQuery(country,{skip});
+  
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await axios.get('https://geo.ipify.org/api/v2/country?apiKey=at_3Ay8HDJW4M5KSB7P0vksWOVOYyObp');
-                if (result) setCountry(result?.data?.location?.country);
-            } catch (error) {
-                console.log("GEO IPIFY ERROR:", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        fetchData();
+      axios
+        .get(`https://geo.ipify.org/api/v2/country?apiKey=at_3Ay8HDJW4M5KSB7P0vksWOVOYyObp`)
+        .then((res) => {
+          setSkip(false);
+          setCountry(res?.data?.location.country)})
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
     }, [country]);
 
 
