@@ -10,8 +10,8 @@ learn this
 bg-gradient-to-l from-transparent to-black
 
 
+discover page ------->songs has to be click -------->fixed
 /artists/details?artist_id=${artistId}----------->API not working
-discover page ------->songs has to be click 
 
 making an unnecessary API call on aroundyou 
 
